@@ -19,11 +19,26 @@ foreach ($matches as $haberler) {
 
 ?>
 <script type="text/javascript">
+$(document).ready(function(){
+	var img=$(this).find('img');
+		say=img.length;
+		console.log(say);
+		for (var i = 0; i < say; i++) {
+			var resim=img[i];
+				link=$(resim).attr('data-src');	
+				$(resim).attr('src',link);
+
+		}
+	
+	
+});
+
 	$('a').click(function(event){
 		event.stopPropagation();
 		event.preventDefault();
 		var link=$(this).attr('href')
 		window.location.href= "http://www.haberturk.com"+link;
+
 		
 	})
 </script>
